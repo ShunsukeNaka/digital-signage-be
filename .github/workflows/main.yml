@@ -20,11 +20,10 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh -o StrictHostKeyChecking=no -p 54322 ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} << 'EOF'
-          fish
-          cd ~/service/digital-signage-be
-          git pull origin main
-          source venv/bin/activate.fish
-          pip install -r requirements.txt
+          ssh -p 54322 ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'fish -c "
+          cd /home/deploy/service/digital-signage-be;
+          git pull origin main;
+          source venv/bin/activate.fish;
+          pip install -r requirements.txt;
           sudo systemctl restart digital-signage-be
-          EOF
+          "'
