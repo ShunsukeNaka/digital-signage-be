@@ -1,0 +1,9 @@
+from .endpoint_user import bp as user_bp
+from .endpoint_signup import bp as signup_bp
+from .endpoint_login import bp as login_bp
+from .endpoint_content import bp as content_bp
+from .endpoint_contents_get import bp as contents_get_bp
+from .endpoint_device import bp as device_bp
+from .endpoint_send_content import bp as send_content_bp
+from .endpoint_send_thumbnail import bp as send_thumbnail_bp
+from .endpoint_check_update import bp as check_update_bp
