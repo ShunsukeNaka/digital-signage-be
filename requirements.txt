@@ -1,0 +1,9 @@
+Flask-Cors==4.0.0       # CORS許可
+Flask-Login==0.6.3      # 認証
+python-dotenv==1.0.1    # .envの読み込み
+gunicorn==22.0.0        # 本番サーバー
+psycopg2-binary==2.9.9  # PostgreSQLドライバ
+SQLAlchemy==2.0.32      # ORM
+Flask-SQLAlchemy==3.1.1 # FlaskとSQLAlchemyの統合
+Werkzeug==2.3.8
+pytz==2025.2
