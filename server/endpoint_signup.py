@@ -35,7 +35,7 @@ POST /signup:
     ----------------------
 
 """
-@bp.route('/', methods=['POST'])
+@bp.route('', methods=['POST'])
 def signup():
     try:
         if request.method == 'POST':

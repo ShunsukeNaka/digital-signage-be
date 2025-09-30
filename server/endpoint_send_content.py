@@ -6,7 +6,7 @@ from .functions_data_management import get_content_path
 bp = Blueprint("send_content", __name__)
 
 
-@bp.route('/', methods=["GET"])
+@bp.route('', methods=["GET"])
 def send_content():
     if request.method == 'GET':
         try:

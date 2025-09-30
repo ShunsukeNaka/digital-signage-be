@@ -4,7 +4,7 @@ from .functions_times import get_now_str
 bp = Blueprint("send_thumbnail", __name__)
 
 
-@bp.route('/', methods=["GET"])
+@bp.route('', methods=["GET"])
 def send_thumbnail():
     if request.method == 'GET':
         try:
