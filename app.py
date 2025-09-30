@@ -26,7 +26,7 @@ from server import *   # Blueprintをインポート
 
 # Flaskアプリ作成
 flask_app = Flask(__name__)
-flask_app.url_map.strict_mode=False
+flask_app.url_map.strict_slashes=False
 flask_app.config.from_object('config')  # config.pyを読み込み
 flask_app.config['CONTENTS_DIR'] = './datas/contents'
 flask_app.config['THUMBNAILS_DIR'] = './datas/thumbnails'
