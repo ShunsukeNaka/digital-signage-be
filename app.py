@@ -22,7 +22,7 @@ from models.device_content import DeviceContent
 from models.onetimetoken import OneTimeToken
 from models.tokens import Token
 from models.device_setting import DeviceSetting
-from server import user_bp, signup_bp   # Blueprintをインポート
+from server import *   # Blueprintをインポート
 
 # Flaskアプリ作成
 flask_app = Flask(__name__)
@@ -40,6 +40,13 @@ application = flask_app
 # Blueprintを登録
 application.register_blueprint(user_bp, url_prefix="/users")
 application.register_blueprint(signup_bp, url_prefix="/signup")
+application.register_blueprint(login_bp, url_prefix="/login")
+application.register_blueprint(content_bp, url_prefix="/content")
+application.register_blueprint(contents_get_bp, url_prefix="/contents")
+application.register_blueprint(device_bp, url_prefix="/device")
+application.register_blueprint(send_content_bp, url_prefix="/send_content")
+application.register_blueprint(send_thumbnail_bp, url_prefix="/send_thumbnail")
+application.register_blueprint(check_update_bp, url_prefix="/check_update")
 
 
 @flask_app.route("/", methods=["GET"])
