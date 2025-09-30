@@ -7,7 +7,7 @@ from .static import UPDATE_INDEX_CONTENT_SET
 
 bp = Blueprint("device", __name__)
 
-@bp.route('', methods=['POST', 'DELETE'])
+@bp.route('/', methods=['POST', 'DELETE'])
 def device():
     try:
         if request.method == 'POST':
