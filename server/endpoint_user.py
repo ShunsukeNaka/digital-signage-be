@@ -39,7 +39,7 @@ POST /user:
     ----------------------
 
 """
-@bp.route('/', methods=['POST'])
+@bp.route('', methods=['POST'])
 def user():
     try:
         if request.method == 'POST':
