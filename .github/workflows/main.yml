@@ -22,7 +22,7 @@ jobs:
         run: |
           ssh -p 54322 -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'fish -c "
             cd /home/fukutech/services/digital-signage-be;
-            git pull origin main;
+            git pull origin master;
             source venv/bin/activate.fish;
             cd digital-signage-be
             pip install -r requirements.txt;
