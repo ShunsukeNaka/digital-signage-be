@@ -6,7 +6,7 @@ from .functions_token import check_token, generate_onetime_token_id
 bp = Blueprint("content", __name__)
 
 
-@bp.route('', methods=['POST', 'DELETE'])
+@bp.route('/', methods=['POST', 'DELETE'])
 def content():
     try:
         if request.method == 'POST':
