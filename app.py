@@ -42,6 +42,10 @@ application.register_blueprint(user_bp, url_prefix="/users")
 application.register_blueprint(signup_bp, url_prefix="/signup")
 
 
+@flask_app.route("/", methods=["GET"])
+def hello_world():
+    return jsonify({"message": "Hello World"}), 200
+
 if __name__ == '__main__':
     from werkzeug.serving import run_simple
     run_simple("0.0.0.0", 59888, application, use_debugger=True, use_reloader=True)
