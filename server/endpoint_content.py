@@ -2,6 +2,7 @@ from .common import *
 from .functions_times import get_now_str
 from .functions_data_management import check_content_type, change_filename, allowed_file, create_square_thumbnail, get_content_path, check_content_type_forPath
 from .functions_token import check_token, generate_onetime_token_id
+from .static import CONTENTS_PATH, THUMBNAIL_PATH
 
 bp = Blueprint("content", __name__)
 
@@ -58,8 +59,8 @@ def content():
             
             if file and allowed_file(file.filename):
                 filename = secure_filename(change_filename(file, content_id))
-                save_path = os.path.join(bp.config['CONTENTS_DIR'], filename)
-                thumbnail_path = os.path.join(bp.config['THUMBNAILS_DIR'], secure_filename(f"{content_id}.png"))
+                save_path = os.path.join(CONTENTS_PATH, filename)
+                thumbnail_path = os.path.join(THUMBNAIL_PATH, secure_filename(f"{content_id}.png"))
                 file.save(save_path)
 
                 print(save_path)
