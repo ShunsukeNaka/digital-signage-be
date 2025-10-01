@@ -45,11 +45,11 @@ def device():
             if add_device is not None:
                 return jsonify({"status": "error", "responded_at": get_now_str(), "message": "同じIDのデバイスが存在しています"}), 406
             
-            with bp.app_context():
-                device = Device(id=device_id, name=device_name, explanation=device_explanation, user_id=user.id, product_id=product.id)
+            # with bp.app_context():
+            device = Device(id=device_id, name=device_name, explanation=device_explanation, user_id=user.id, product_id=product.id)
 
-                db.session.add(device)
-                db.session.commit()
+            db.session.add(device)
+            db.session.commit()
             
             return jsonify({
                 "status": "success",
