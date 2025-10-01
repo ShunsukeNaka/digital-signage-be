@@ -1,6 +1,6 @@
 from .common import *
 from .functions_times import get_now_str
-from .static import ALLOWED_EXTENSIONS, ALLOWED_EXTENSIONS_IMG, ALLOWED_EXTENSIONS_MOV
+from .static import ALLOWED_EXTENSIONS, ALLOWED_EXTENSIONS_IMG, ALLOWED_EXTENSIONS_MOV, CONTENTS_PATH, THUMBNAIL_PATH
 
 
 def allowed_file(filename):
@@ -57,7 +57,8 @@ def check_content_type_forPath_ext(filepath):
 #     return file_path
 
 def get_content_path(content_id):
-    content_dir = './datas/contents/'
+    # content_dir = './datas/contents/'
+    content_dir = CONTENTS_PATH
     # ファイルパスを探索（拡張子は任意）
     possible_files = [f for f in os.listdir(content_dir) if f.startswith(content_id + ".")]
     if not possible_files:

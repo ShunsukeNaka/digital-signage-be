@@ -1,3 +1,13 @@
+import os
+from dotenv import load_dotenv
+
+
+dotenv_path = os.path.join(os.path.dirname(__file__), "..", ".env")
+load_dotenv(dotenv_path)
+
+CONTENTS_PATH = os.getenv("CONTENTS_PATH")
+THUMBNAIL_PATH = os.getenv("THUMBNAIL_PATH")
+
 ALLOWED_EXTENSIONS_IMG = {'png', 'jpg', 'jpeg', 'gif'}
 ALLOWED_EXTENSIONS_MOV = {'mp4', 'mov'}
 # ALLOWED_EXTENSIONS_PPT = {'ppt', 'pptx'}
