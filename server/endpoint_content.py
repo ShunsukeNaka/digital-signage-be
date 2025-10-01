@@ -7,7 +7,7 @@ from .static import CONTENTS_PATH, THUMBNAIL_PATH
 bp = Blueprint("content", __name__)
 
 
-@bp.route('', methods=['POST', 'DELETE'])
+@bp.route('/', methods=['POST', 'DELETE'])
 def content():
     try:
         if request.method == 'POST':
