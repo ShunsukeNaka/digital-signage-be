@@ -221,6 +221,7 @@ def device_content_set():
         if request.method == 'POST':
             data = request.get_json()
 
+
             # if not data or "token" not in data or "device_id" not in data or "content_id" not in data:
             
 
@@ -242,24 +243,24 @@ def device_content_set():
             searched_token = Token.query.filter_by(user_id=token.user_id).first()
             device = Device.query.filter_by(id=device_id).first()
             
-            with bp.app_context():
-                # まず既存のレコードを取得
-                device_setting = DeviceSetting.query.filter_by(device_id=device_id).first()
+            # with bp.app_context():
+            # まず既存のレコードを取得
+            device_setting = DeviceSetting.query.filter_by(device_id=device_id).first()
+            
+            if device_setting:
+                # 既存レコードがあれば更新
+                device_setting.token = token.token
+                device_setting.settings = settings  # JSONBなら dict のままでOK
+            else:
+                # なければ新規作成
+                device_setting = DeviceSetting(
+                    token=token.token,
+                    device_id=device_id,
+                    settings=settings
+                )
+                db.session.add(device_setting)
 
-                if device_setting:
-                    # 既存レコードがあれば更新
-                    device_setting.token = token.token
-                    device_setting.settings = settings  # JSONBなら dict のままでOK
-                else:
-                    # なければ新規作成
-                    device_setting = DeviceSetting(
-                        token=token.token,
-                        device_id=device_id,
-                        settings=settings
-                    )
-                    db.session.add(device_setting)
-
-                db.session.commit()
+            db.session.commit()
 
           
             update_device_true(searched_token.user_id, device_id, UPDATE_INDEX_CONTENT_SET)
