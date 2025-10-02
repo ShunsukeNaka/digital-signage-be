@@ -1,0 +1,31 @@
+name: Deploy Flask App
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4    # ← name と uses を同じハイフン内に
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Deploy to Server
+        run: |
+          ssh -p 54322 -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'fish -c "
+            cd /home/fukutech/services/digital-signage-be/digital-signage-be;
+            git pull origin master;
+            cd ..
+            source venv/bin/activate.fish;
+            cd digital-signage-be
+            pip install -r requirements.txt;
+            sudo systemctl restart digital-signage-be
+          "'
