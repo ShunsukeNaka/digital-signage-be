@@ -12,11 +12,11 @@ def send_thumbnail():
                 return jsonify({"error": "it has no query"}), 400
             
             content_id = request.args.get('id')
-            file_path = f'./datas/thumbnails/{content_id}.png'
+            file_path = f'../datas/thumbnails/{content_id}.png'
 
             # ファイルの存在チェック
             if not os.path.exists(file_path):
-                file_path = './datas/thumbnails/no_thunmbnail.png'
+                file_path = '../datas/thumbnails/no_thunmbnail.png'
                 # return jsonify({"error": "file not found"}), 404
             
             return send_file(

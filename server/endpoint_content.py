@@ -227,11 +227,11 @@ def get_content_device():
             # _, ext = os.path.splitext(file_path)
             token = generate_onetime_token_id()
 
-            with bp.app_context():
-                one_time_token = OneTimeToken(id=token, user_id=user_id, created_at=datetime.now(timezone.utc), expires_at=datetime.now(timezone.utc) + timedelta(hours=1))
+            #with bp.app_context():
+            one_time_token = OneTimeToken(id=token, user_id=user_id, created_at=datetime.now(timezone.utc), expires_at=datetime.now(timezone.utc) + timedelta(hours=1))
 
-                db.session.add(one_time_token)
-                db.session.commit()
+            db.session.add(one_time_token)
+            db.session.commit()
 
 
             return jsonify({
