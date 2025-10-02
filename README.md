@@ -5,6 +5,7 @@
 
 # はじめにやること
 -  ```python -m venv venv```
+-  ```datas/contents```ディレクトリと```datas/thumbnails```ディレクトリを作る
 -  ```git pull https://github.com/ShunsukeNaka/digital-signage-be.git master```
 -  仮想環境をアクティベート（コマンドは開発環境によって様々なので各自で）
 -  ```git pull``` してきたら```digital-signage-be```ディレクトリができているはずなので入る。 ```cd digital-signage-be```
