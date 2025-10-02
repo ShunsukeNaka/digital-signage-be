@@ -1,3 +1,8 @@
+# ルール
+- 開発するときはブランチを分ける
+- 直接masterブランチにpushしない
+- プルリクエストを送る
+
 # はじめにやること
 -  ```python -m venv venv```
 -  ```git pull https://github.com/ShunsukeNaka/digital-signage-be.git master```
@@ -8,3 +13,8 @@
 -  ```digital-signage-be```ディレクトリに```app.py```があるので、仮想環境をアクティベートした状態で```python app.py```
 
 以上の手順でサーバーが起動するはずです。サーバーは59888番ポートで起動します。
+
+# 新しいエンドポイントを追加するとき
+- ```server```ディレクトリ内に各エンドポイントごとに```endpoint-○○○○```ファイルを作る
+- ```server```ディレクトリの```__init__.py```にエンドポイントのブループリントをimportする
+- ```app.py```から作成したエンドポイントのプループリントを追加する
