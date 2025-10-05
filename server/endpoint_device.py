@@ -258,18 +258,18 @@ def device_content_set():
             # まず既存のレコードを取得
             device_setting = DeviceSetting.query.filter_by(device_id=device_id).first()
             
-            # if device_setting:
-            #     # 既存レコードがあれば更新
-            #     device_setting.token = token.token
-            #     device_setting.settings = settings  # JSONBなら dict のままでOK
-            # else:
+            if device_setting:
+                # 既存レコードがあれば更新
+                device_setting.token = token.token
+                device_setting.settings = settings  # JSONBなら dict のままでOK
+            else:
                 # なければ新規作成
-            device_setting = DeviceSetting(
-                token=token.token,
-                device_id=device_id,
-                settings=settings
-            )
-            db.session.add(device_setting)
+                device_setting = DeviceSetting(
+                    token=token.token,
+                    device_id=device_id,
+                    settings=settings
+                )
+                db.session.add(device_setting)
 
             db.session.commit()
 
@@ -289,7 +289,14 @@ def device_content_set():
                 "message": f'message: {e}'
             }), 500
     
-
+"""
+POST
+{
+    token
+    group_id
+    settings
+}
+"""
 @bp.route('/content/set/group', methods=['POST'])
 def device_content_set_group():
     try:
@@ -301,10 +308,10 @@ def device_content_set_group():
             
 
             token = data.get("token")
-            device_id = data.get("device_id")
+            group_id = data.get("group_id")
             settings = data.get("settings")
 
-            if not token or not device_id or not settings:
+            if not token or not group_id or not settings:
                 return jsonify({"error": "Invalid JSON", "responded_at": get_now_str()}), 400
             # content_id = data.get("content_id")
             # device_id = data.get("device_id")
@@ -316,34 +323,55 @@ def device_content_set_group():
             token = result
 
             searched_token = Token.query.filter_by(user_id=token.user_id).first()
-            device = Device.query.filter_by(id=device_id).first()
-            
-            # with bp.app_context():
-            # まず既存のレコードを取得
-            device_setting = DeviceSetting.query.filter_by(device_id=device_id).first()
-            
-            # if device_setting:
-            #     # 既存レコードがあれば更新
-            #     device_setting.token = token.token
-            #     device_setting.settings = settings  # JSONBなら dict のままでOK
-            # else:
-                # なければ新規作成
-            device_setting = DeviceSetting(
-                token=token.token,
-                device_id=device_id,
-                settings=settings
-            )
-            db.session.add(device_setting)
 
+            # DataBaseからDeviceGroupのデータを取得して重複を確認
+            add_group = DeviceGroup.query.filter_by(user_id=token.user_id, id=group_id).first()
+            if add_group is None:
+                return jsonify({"status": "error", "responded_at": get_now_str(), "message": "グループが存在しません"}), 406
+            
+            device_settings_list = DeviceSetting.query.filter(
+                DeviceSetting.group_settings.any(group_id)
+            ).all()
+
+            device_ids = [setting.device_id for setting in device_settings_list]
+
+            device_id_list = [
+                device.id for device in Device.query.filter(
+                    Device.id.in_(device_ids),
+                    Device.user_id == token.user_id
+                ).all()
+            ]
+
+            for device_id in device_id_list:
+                device = Device.query.filter_by(id=device_id).first()
+                if device is None:
+                    return jsonify({"status": "error", "responded_at": get_now_str(), "message": "デバイスが存在しません"}), 406
+                
+                # with bp.app_context():
+                # まず既存のレコードを取得
+                device_setting = DeviceSetting.query.filter_by(device_id=device_id).first()
+                
+                if device_setting:
+                    # 既存レコードがあれば更新
+                    device_setting.token = token.token
+                    device_setting.settings = settings  # JSONBなら dict のままでOK
+                else:
+                    # なければ新規作成
+                    device_setting = DeviceSetting(
+                        token=token.token,
+                        device_id=device_id,
+                        settings=settings
+                    )
+                    db.session.add(device_setting)
             db.session.commit()
 
-          
-            update_device_true(searched_token.user_id, device_id, UPDATE_INDEX_CONTENT_SET)
+            for device_id in device_id_list:
+                update_device_true(searched_token.user_id, device_id, UPDATE_INDEX_CONTENT_SET)
             
             return jsonify({
                 "status": "success",
                 "responded_at": get_now_str(),
-                "device": device.id,
+                "device": device_id_list,
                 "settings": settings
             }), 200
 
@@ -418,7 +446,7 @@ def device_content_get_device():
         device_id = checked_token.device_id
 
         # デバイス取得
-        device = Device.query.filter_by(id=device_id).first()
+        device = Device.query.filter_by(token.user_id, id=device_id).first()
         if not device:
             return jsonify({"error": "Device not found", "responded_at": get_now_str()}), 404
 
@@ -630,8 +658,15 @@ def device_group_set():
             if add_group is None:
                 return jsonify({"status": "error", "responded_at": get_now_str(), "message": "グループが存在しません"}), 406
             
+            device_id_list = [
+                device.id for device in Device.query.filter(
+                    Device.id.in_(id_array),
+                    Device.user_id == user_id
+                ).all()
+            ]
+
             device_settings_list = DeviceSetting.query.filter(
-                DeviceSetting.device_id.in_(id_array)
+                DeviceSetting.device_id.in_(device_id_list),
             ).all()
 
             # with bp.app_context():
@@ -653,7 +688,7 @@ def device_group_set():
                     "id": user_id,
                 },
                 "group_id": group_id,
-                "device": id_array
+                "device": device_id_list
             }), 200
         if request.method == 'DELETE':
             data = request.get_json()
@@ -684,9 +719,16 @@ def device_group_set():
             if add_group is None:
                 return jsonify({"status": "error", "responded_at": get_now_str(), "message": "グループが存在しません"}), 406
             
+            device_id_list = [
+                device.id for device in Device.query.filter(
+                    Device.id.in_(id_array),
+                    Device.user_id == user_id
+                ).all()
+            ]
+
             # 対象デバイスを取得
             device_settings_list = DeviceSetting.query.filter(
-                DeviceSetting.device_id.in_(id_array)
+                DeviceSetting.device_id.in_(device_id_list)
             ).all()
 
             for setting in device_settings_list:
@@ -701,7 +743,7 @@ def device_group_set():
                 "responded_at": get_now_str(),
                 "user": {"id": user_id},
                 "group_id": group_id,
-                "device": id_array
+                "device": device_id_list
             }), 200
     except Exception as e:
         return jsonify({
@@ -742,13 +784,20 @@ def device_group_device_get():
             add_group = DeviceGroup.query.filter_by(user_id=user_id, id=group_id).first()
             if add_group is None:
                 return jsonify({"status": "error", "responded_at": get_now_str(), "message": "グループが存在しません"}), 406
-            
+
             device_settings_list = DeviceSetting.query.filter(
                 DeviceSetting.group_settings.any(group_id)
             ).all()
 
             device_ids = [setting.device_id for setting in device_settings_list]
             
+            device_id_list = [
+                device.id for device in Device.query.filter(
+                    Device.id.in_(device_ids),
+                    Device.user_id == user_id
+                ).all()
+            ]
+
             return jsonify({
                 "status": "success",
                 "responded_at": get_now_str(),
@@ -756,7 +805,7 @@ def device_group_device_get():
                     "id": user_id,
                 },
                 "group_id": group_id,
-                "device": device_ids
+                "device": device_id_list
             }), 200
     except Exception as e:
         return jsonify({
