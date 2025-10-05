@@ -22,3 +22,4 @@ from models.device_content import DeviceContent
 from models.onetimetoken import OneTimeToken
 from models.tokens import Token
 from models.device_setting import DeviceSetting
+from models.device_group import DeviceGroup
