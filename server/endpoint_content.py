@@ -223,7 +223,9 @@ def get_content_device():
             if user is None:
                 return jsonify({"status": "error", "responded_at": get_now_str(), "message": "ユーザーが存在しません"}), 404
 
-            file_path = get_content_path(content_id) 
+            file_path = get_content_path(content_id)
+            if file_path is None:
+                return jsonify({"status": "error", "responded_at": get_now_str(), "message": "ファイルが存在しません"}), 406
             # _, ext = os.path.splitext(file_path)
             token = generate_onetime_token_id()
 
