@@ -446,7 +446,7 @@ def device_content_get_device():
         device_id = checked_token.device_id
 
         # デバイス取得
-        device = Device.query.filter_by(token.user_id, id=device_id).first()
+        device = Device.query.filter_by(checked_token.user_id, id=device_id).first()
         if not device:
             return jsonify({"error": "Device not found", "responded_at": get_now_str()}), 404
 
