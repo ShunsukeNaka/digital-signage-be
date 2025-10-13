@@ -45,6 +45,19 @@ def content():
             if content_type == 'NOTALLOWEDTYPE':
                 return jsonify({"status": "error", "message": "許可されていないファイル形式です"}), 400
             
+            pdf = False
+            if content_type == "TYPYISPDF":
+                pdf_bytes = file.read()
+                pages = convert_from_bytes(pdf_bytes, dpi=200)
+                pdf = True
+
+
+            #     files = convertPdf2Png(file)
+            #     if will_add_files == "FAILED":
+            #         return jsonify({"status": "error", "message": "許可されていないファイル形式です"}), 401
+            # else:
+            #     will_add_file = file
+
 
             # DataBaseからデータを取得して照合
             # user = User.query.filter_by(id=user_id).first()
@@ -57,30 +70,52 @@ def content():
             if content is not None:
                 return jsonify({"status": "error", "responded_at": get_now_str(), "message": "同じコンテンツIDが存在しています"}), 409
             
-            if file and allowed_file(file.filename):
-                filename = secure_filename(change_filename(file, content_id))
-                save_path = os.path.join(CONTENTS_PATH, filename)
-                thumbnail_path = os.path.join(THUMBNAIL_PATH, secure_filename(f"{content_id}.png"))
-                file.save(save_path)
+            return_files=[]
+            if pdf:
+                for i, page in enumerate(pages):
+                    filename = secure_filename(f"{content_id}_{i}.png")
+                    save_path = os.path.join(CONTENTS_PATH, filename)
+                    thumbnail_path = os.path.join(THUMBNAIL_PATH, filename)
 
-                print(save_path)
-                print(thumbnail_path)
+                    # PDFの各ページをPNGとして保存
+                    page.save(save_path, "PNG")
+                    create_square_thumbnail(input_path=save_path, output_path=thumbnail_path)
 
-                create_square_thumbnail(input_path=save_path, output_path=thumbnail_path)
-                # return jsonify({"status": "success", "filename": filename}), 200
+                    # DBへ登録
+                    add_content = Content(
+                        id=f"{content_id}_{i}", 
+                        name=f"{content_name}_{i}", 
+                        type="image",
+                        explanation=content_explanation, 
+                        user_id=user_id
+                    )
+                    db.session.add(add_content)
+                db.session.commit()
             else:
-                return jsonify({"status": "error", "message": "許可されていないファイル形式です"}), 400
-            
-            add_content = Content(
-                id=content_id, 
-                name=content_name, 
-                type=content_type,
-                explanation=content_explanation, 
-                user_id=user_id
-            )
-            db.session.add(add_content)
-            db.session.commit()
-            
+                if file and allowed_file(file.filename):
+                    filename = secure_filename(change_filename(file, content_id))
+                    save_path = os.path.join(CONTENTS_PATH, filename)
+                    thumbnail_path = os.path.join(THUMBNAIL_PATH, secure_filename(f"{content_id}.png"))
+                    file.save(save_path)
+
+                    print(save_path)
+                    print(thumbnail_path)
+
+                    create_square_thumbnail(input_path=save_path, output_path=thumbnail_path)
+                    # return jsonify({"status": "success", "filename": filename}), 200
+                else:
+                    return jsonify({"status": "error", "message": "許可されていないファイル形式です"}), 400
+                
+                add_content = Content(
+                    id=content_id, 
+                    name=content_name, 
+                    type=content_type,
+                    explanation=content_explanation, 
+                    user_id=user_id
+                )
+                db.session.add(add_content)
+                db.session.commit()
+                
             return jsonify({
                 "status": "success",
                 "responded_at": get_now_str(),
