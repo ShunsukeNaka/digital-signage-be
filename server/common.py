@@ -12,6 +12,8 @@ from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime, timezone, timedelta
 from sqlalchemy import or_
+from pdf2image import convert_from_bytes
+from io import BytesIO
 from models import db
 from models.user import User
 from models.device import Device

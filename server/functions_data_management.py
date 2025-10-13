@@ -14,7 +14,10 @@ def check_content_type(file):
     _, ext = os.path.splitext(file.filename)
     ext = ext.lower().lstrip('.')
     ext = ext.lower()
+    if ext == "pdf":
+        return "TYPYISPDF"
     if ext in ALLOWED_EXTENSIONS_IMG:
+        print(ext)
         return 'image'
     if ext in ALLOWED_EXTENSIONS_MOV:
         return 'video'
@@ -85,7 +88,7 @@ def create_square_thumbnail(input_path, output_path,size: int = 300, video_frame
     """
 
     # 判定用の拡張子セット
-    img_exts = {'.png', '.jpg', '.jpeg', '.gif'}
+    img_exts = {'.png', '.jpg', '.jpeg'}
     vid_exts = {'.mp4', '.mov'}
 
     ext = os.path.splitext(input_path)[1].lower()
