@@ -7,3 +7,4 @@ from .endpoint_device import bp as device_bp
 from .endpoint_send_content import bp as send_content_bp
 from .endpoint_send_thumbnail import bp as send_thumbnail_bp
 from .endpoint_check_update import bp as check_update_bp
+from .endpoint_rotate import bp as rotate

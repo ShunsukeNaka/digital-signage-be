@@ -7,6 +7,7 @@ load_dotenv(dotenv_path)
 
 CONTENTS_PATH = os.getenv("CONTENTS_PATH")
 THUMBNAIL_PATH = os.getenv("THUMBNAIL_PATH")
+TMP_PATH = os.getenv("TMP_PATH")
 
 ALLOWED_EXTENSIONS_IMG = {'png', 'jpg', 'jpeg'}
 ALLOWED_EXTENSIONS_MOV = {'mp4', 'mov'}
