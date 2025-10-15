@@ -48,6 +48,7 @@ application.register_blueprint(device_bp, url_prefix="/device")
 application.register_blueprint(send_content_bp, url_prefix="/send_content")
 application.register_blueprint(send_thumbnail_bp, url_prefix="/send_thumbnail")
 application.register_blueprint(check_update_bp, url_prefix="/check_update")
+application.register_blueprint(rotate, url_prefix="/rotate")
 
 
 @flask_app.route("/", methods=["GET"])
