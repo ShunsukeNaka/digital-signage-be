@@ -683,18 +683,21 @@ def device_group_set():
             
 
             for setting in device_settings_list:
-                print("デバイスID:", setting.device_id)
-                print("元の group_settings:", setting.group_settings)
+                # None の場合は空リストに変換
+                if not setting.group_settings:
+                    group_list = []
+                # set や dict なら list に変換
+                elif isinstance(setting.group_settings, (set, dict)):
+                    group_list = list(setting.group_settings)
+                else:
+                    group_list = list(setting.group_settings)  # すでに list ならそのまま
 
-                # None や dict の場合は空リストに初期化
-                if not isinstance(setting.group_settings, list):
-                    setting.group_settings = []
-
-                # group_id を文字列で統一して追加（重複は避ける）
                 group_id_str = str(group_id)
-                if group_id_str not in setting.group_settings:
-                    setting.group_settings.append(group_id_str)
-                    print("追加後の setting.group_settings:", setting.group_settings)
+                if group_id_str not in group_list:
+                    group_list.append(group_id_str)
+
+                # 最後に戻す
+                setting.group_settings = group_list
                     
             db.session.commit()
             
