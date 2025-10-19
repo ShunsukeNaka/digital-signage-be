@@ -31,7 +31,7 @@ def checkupdate():
             
             device_update_token = add_token(user_id=user_id, device_id=device_id, token_type="device_update")
 
-            now = datetime.utcnow()
+            now = get_now_str()
             new_health = DeviceHealth(
                 device_id=device_id,
                 latest_connectedAt=now,
