@@ -31,6 +31,16 @@ def checkupdate():
             
             device_update_token = add_token(user_id=user_id, device_id=device_id, token_type="device_update")
 
+            now = datetime.utcnow()
+            new_health = DeviceHealth(
+                device_id=device_id,
+                latest_connectedAt=now,
+                status="online",
+                updated_at=now
+            )
+            db.session.add(new_health)
+            db.session.commit()
+
             return jsonify({
                 "status": "success", 
                 "responded_at": get_now_str(), 
