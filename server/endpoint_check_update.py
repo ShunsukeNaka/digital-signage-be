@@ -1,5 +1,5 @@
 from .common import *
-from .functions_times import get_now_str
+from .functions_times import get_now_str, get_jst_time
 from .functions_token import check_token, add_token
 from .functions_check_update import check_update_device, update_device_false
 
@@ -31,7 +31,7 @@ def checkupdate():
             
             device_update_token = add_token(user_id=user_id, device_id=device_id, token_type="device_update")
 
-            now = get_now_str()
+            now = get_jst_time()
             new_health = DeviceHealth(
                 device_id=device_id,
                 latest_connectedAt=now,
