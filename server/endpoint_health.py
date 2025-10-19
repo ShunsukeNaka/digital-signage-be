@@ -1,5 +1,5 @@
 from .common import *
-from .functions_times import get_now_str
+from .functions_times import get_now_str, UtcGmt2JST
 from .functions_token import check_token
 from .static import CONTENTS_PATH, THUMBNAIL_PATH
 
@@ -59,9 +59,9 @@ def content():
         for health in devices:
             result.append({
                 "device_id": health.device_id,
-                "latest_connectedAt": health.latest_connectedAt,
+                "latest_connectedAt": UtcGmt2JST(health.latest_connectedAt),
                 "status": health.status,
-                "updated_at": health.updated_at
+                "updated_at": UtcGmt2JST(health.updated_at)
             })
 
         return jsonify({
