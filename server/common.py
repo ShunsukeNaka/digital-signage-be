@@ -26,3 +26,4 @@ from models.onetimetoken import OneTimeToken
 from models.tokens import Token
 from models.device_setting import DeviceSetting
 from models.device_group import DeviceGroup
+from models.device_health import DeviceHealth

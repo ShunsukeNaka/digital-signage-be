@@ -664,20 +664,37 @@ def device_group_set():
                     Device.user_id == user_id
                 ).all()
             ]
+            print(device_id_list)
 
             device_settings_list = DeviceSetting.query.filter(
                 DeviceSetting.device_id.in_(device_id_list),
             ).all()
 
             # with bp.app_context():
+            # for setting in device_settings_list:
+            #     # print(setting.device_id)
+            #     if isinstance(setting.group_settings, dict):
+            #         setting.group_settings = []
+            #         print(group_id)
+            #     if group_id not in setting.group_settings:
+            #         print(group_id)
+            #         print("setting:", setting.group_settings)
+            #         setting.group_settings = setting.group_settings + [str(group_id)]
+            
+
             for setting in device_settings_list:
-                print(setting.device_id)
-                if isinstance(setting.group_settings, dict):
+                print("デバイスID:", setting.device_id)
+                print("元の group_settings:", setting.group_settings)
+
+                # None や dict の場合は空リストに初期化
+                if not isinstance(setting.group_settings, list):
                     setting.group_settings = []
-                if group_id not in setting.group_settings:
-                    print(group_id)
-                    print("setting:", setting.group_settings)
-                    setting.group_settings = setting.group_settings + [str(group_id)]
+
+                # group_id を文字列で統一して追加（重複は避ける）
+                group_id_str = str(group_id)
+                if group_id_str not in setting.group_settings:
+                    setting.group_settings.append(group_id_str)
+                    print("追加後の setting.group_settings:", setting.group_settings)
                     
             db.session.commit()
             
