@@ -5,6 +5,7 @@ from .functions_check_update import check_update_device, update_device_false
 
 bp = Blueprint("check_update", __name__)
 
+@bp.route('', methods=['POST'])
 @bp.route('/', methods=['POST'])
 def checkupdate():
     try:

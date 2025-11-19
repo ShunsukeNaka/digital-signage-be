@@ -1,0 +1,1000 @@
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:18 fukutech gunicorn[951965]:     self.callable = self.load()
+ 9月 30 12:43:18 fukutech gunicorn[951965]:                     ^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:18 fukutech gunicorn[951965]:     return self.load_wsgiapp()
+ 9月 30 12:43:18 fukutech gunicorn[951965]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:18 fukutech gunicorn[951965]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:18 fukutech gunicorn[951965]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:18 fukutech gunicorn[951965]:     mod = importlib.import_module(module)
+ 9月 30 12:43:18 fukutech gunicorn[951965]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:18 fukutech gunicorn[951965]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:18 fukutech gunicorn[951965]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:18 fukutech gunicorn[951965]:     db.init_app(flask_app)
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:18 fukutech gunicorn[951965]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:18 fukutech gunicorn[951965]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:18 fukutech gunicorn[951965]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:18 fukutech gunicorn[951965]:     return _parse_url(name_or_url)
+ 9月 30 12:43:18 fukutech gunicorn[951965]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951965]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:18 fukutech gunicorn[951965]:     components["port"] = int(components["port"])
+ 9月 30 12:43:18 fukutech gunicorn[951965]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951965]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:18 fukutech gunicorn[951965]: [2025-09-30 12:43:18 +0900] [951965] [INFO] Worker exiting (pid: 951965)
+ 9月 30 12:43:18 fukutech gunicorn[951964]: [2025-09-30 12:43:18 +0900] [951964] [ERROR] Worker (pid:951965) exited with code 3
+ 9月 30 12:43:18 fukutech gunicorn[951967]: [2025-09-30 12:43:18 +0900] [951967] [ERROR] Exception in worker process
+ 9月 30 12:43:18 fukutech gunicorn[951967]: Traceback (most recent call last):
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     worker.init_process()
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     super().init_process()
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     self.load_wsgi()
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:18 fukutech gunicorn[951967]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     self.callable = self.load()
+ 9月 30 12:43:18 fukutech gunicorn[951967]:                     ^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     return self.load_wsgiapp()
+ 9月 30 12:43:18 fukutech gunicorn[951967]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:18 fukutech gunicorn[951967]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     mod = importlib.import_module(module)
+ 9月 30 12:43:18 fukutech gunicorn[951967]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:18 fukutech gunicorn[951967]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     db.init_app(flask_app)
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:18 fukutech gunicorn[951967]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     return _parse_url(name_or_url)
+ 9月 30 12:43:18 fukutech gunicorn[951967]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951967]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:18 fukutech gunicorn[951967]:     components["port"] = int(components["port"])
+ 9月 30 12:43:18 fukutech gunicorn[951967]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:18 fukutech gunicorn[951967]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:18 fukutech gunicorn[951967]: [2025-09-30 12:43:18 +0900] [951967] [INFO] Worker exiting (pid: 951967)
+ 9月 30 12:43:19 fukutech gunicorn[951966]: [2025-09-30 12:43:19 +0900] [951966] [ERROR] Exception in worker process
+ 9月 30 12:43:19 fukutech gunicorn[951966]: Traceback (most recent call last):
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     worker.init_process()
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     super().init_process()
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     self.load_wsgi()
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:19 fukutech gunicorn[951966]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     self.callable = self.load()
+ 9月 30 12:43:19 fukutech gunicorn[951966]:                     ^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     return self.load_wsgiapp()
+ 9月 30 12:43:19 fukutech gunicorn[951966]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:19 fukutech gunicorn[951966]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     mod = importlib.import_module(module)
+ 9月 30 12:43:19 fukutech gunicorn[951966]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:19 fukutech gunicorn[951966]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     db.init_app(flask_app)
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:19 fukutech gunicorn[951966]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     return _parse_url(name_or_url)
+ 9月 30 12:43:19 fukutech gunicorn[951966]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951966]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:19 fukutech gunicorn[951966]:     components["port"] = int(components["port"])
+ 9月 30 12:43:19 fukutech gunicorn[951966]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951966]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:19 fukutech gunicorn[951966]: [2025-09-30 12:43:19 +0900] [951966] [INFO] Worker exiting (pid: 951966)
+ 9月 30 12:43:19 fukutech gunicorn[951964]: [2025-09-30 12:43:19 +0900] [951964] [ERROR] Worker (pid:951967) exited with code 3
+ 9月 30 12:43:19 fukutech gunicorn[951964]: Traceback (most recent call last):
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 209, in run
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     self.sleep()
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 360, in sleep
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+ 9月 30 12:43:19 fukutech gunicorn[951964]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     self.reap_workers()
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 530, in reap_workers
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+ 9月 30 12:43:19 fukutech gunicorn[951964]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+ 9月 30 12:43:19 fukutech gunicorn[951964]: During handling of the above exception, another exception occurred:
+ 9月 30 12:43:19 fukutech gunicorn[951964]: Traceback (most recent call last):
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/bin/gunicorn", line 8, in <module>
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     sys.exit(run())
+ 9月 30 12:43:19 fukutech gunicorn[951964]:              ^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 236, in run
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     super().run()
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 72, in run
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     Arbiter(self).run()
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 229, in run
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 342, in halt
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     self.stop()
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 396, in stop
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     time.sleep(0.1)
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     self.reap_workers()
+ 9月 30 12:43:19 fukutech gunicorn[951964]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 530, in reap_workers
+ 9月 30 12:43:19 fukutech gunicorn[951964]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+ 9月 30 12:43:19 fukutech gunicorn[951964]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+ 9月 30 12:43:19 fukutech gunicorn[951970]: [2025-09-30 12:43:19 +0900] [951970] [ERROR] Exception in worker process
+ 9月 30 12:43:19 fukutech gunicorn[951970]: Traceback (most recent call last):
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     worker.init_process()
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     super().init_process()
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     self.load_wsgi()
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:19 fukutech gunicorn[951970]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     self.callable = self.load()
+ 9月 30 12:43:19 fukutech gunicorn[951970]:                     ^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     return self.load_wsgiapp()
+ 9月 30 12:43:19 fukutech gunicorn[951970]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:19 fukutech gunicorn[951970]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     mod = importlib.import_module(module)
+ 9月 30 12:43:19 fukutech gunicorn[951970]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:19 fukutech gunicorn[951970]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     db.init_app(flask_app)
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:19 fukutech gunicorn[951970]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     return _parse_url(name_or_url)
+ 9月 30 12:43:19 fukutech gunicorn[951970]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951970]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:19 fukutech gunicorn[951970]:     components["port"] = int(components["port"])
+ 9月 30 12:43:19 fukutech gunicorn[951970]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:19 fukutech gunicorn[951970]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:19 fukutech gunicorn[951970]: [2025-09-30 12:43:19 +0900] [951970] [INFO] Worker exiting (pid: 951970)
+ 9月 30 12:43:19 fukutech gunicorn[951979]: [2025-09-30 12:43:19 +0900] [951979] [INFO] Starting gunicorn 22.0.0
+ 9月 30 12:43:19 fukutech gunicorn[951979]: [2025-09-30 12:43:19 +0900] [951979] [INFO] Listening at: http://127.0.0.1:8000 (951979)
+ 9月 30 12:43:19 fukutech gunicorn[951979]: [2025-09-30 12:43:19 +0900] [951979] [INFO] Using worker: gthread
+ 9月 30 12:43:19 fukutech gunicorn[951980]: [2025-09-30 12:43:19 +0900] [951980] [INFO] Booting worker with pid: 951980
+ 9月 30 12:43:19 fukutech gunicorn[951981]: [2025-09-30 12:43:19 +0900] [951981] [INFO] Booting worker with pid: 951981
+ 9月 30 12:43:19 fukutech gunicorn[951982]: [2025-09-30 12:43:19 +0900] [951982] [INFO] Booting worker with pid: 951982
+ 9月 30 12:43:19 fukutech gunicorn[951987]: [2025-09-30 12:43:19 +0900] [951987] [INFO] Booting worker with pid: 951987
+ 9月 30 12:43:20 fukutech gunicorn[951981]: [2025-09-30 12:43:20 +0900] [951981] [ERROR] Exception in worker process
+ 9月 30 12:43:20 fukutech gunicorn[951981]: Traceback (most recent call last):
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     worker.init_process()
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     super().init_process()
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     self.load_wsgi()
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:20 fukutech gunicorn[951981]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     self.callable = self.load()
+ 9月 30 12:43:20 fukutech gunicorn[951981]:                     ^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     return self.load_wsgiapp()
+ 9月 30 12:43:20 fukutech gunicorn[951981]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:20 fukutech gunicorn[951981]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     mod = importlib.import_module(module)
+ 9月 30 12:43:20 fukutech gunicorn[951981]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:20 fukutech gunicorn[951981]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     db.init_app(flask_app)
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:20 fukutech gunicorn[951981]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     return _parse_url(name_or_url)
+ 9月 30 12:43:20 fukutech gunicorn[951981]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951981]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:20 fukutech gunicorn[951981]:     components["port"] = int(components["port"])
+ 9月 30 12:43:20 fukutech gunicorn[951981]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951981]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:20 fukutech gunicorn[951981]: [2025-09-30 12:43:20 +0900] [951981] [INFO] Worker exiting (pid: 951981)
+ 9月 30 12:43:20 fukutech gunicorn[951980]: [2025-09-30 12:43:20 +0900] [951980] [ERROR] Exception in worker process
+ 9月 30 12:43:20 fukutech gunicorn[951980]: Traceback (most recent call last):
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     worker.init_process()
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     super().init_process()
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     self.load_wsgi()
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:20 fukutech gunicorn[951980]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     self.callable = self.load()
+ 9月 30 12:43:20 fukutech gunicorn[951980]:                     ^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     return self.load_wsgiapp()
+ 9月 30 12:43:20 fukutech gunicorn[951980]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:20 fukutech gunicorn[951980]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     mod = importlib.import_module(module)
+ 9月 30 12:43:20 fukutech gunicorn[951980]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:20 fukutech gunicorn[951980]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     db.init_app(flask_app)
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:20 fukutech gunicorn[951980]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     return _parse_url(name_or_url)
+ 9月 30 12:43:20 fukutech gunicorn[951980]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951980]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:20 fukutech gunicorn[951980]:     components["port"] = int(components["port"])
+ 9月 30 12:43:20 fukutech gunicorn[951980]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951980]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:20 fukutech gunicorn[951980]: [2025-09-30 12:43:20 +0900] [951980] [INFO] Worker exiting (pid: 951980)
+ 9月 30 12:43:20 fukutech gunicorn[951979]: [2025-09-30 12:43:20 +0900] [951979] [ERROR] Worker (pid:951981) exited with code 3
+ 9月 30 12:43:20 fukutech gunicorn[951979]: [2025-09-30 12:43:20 +0900] [951979] [ERROR] Worker (pid:951980) was sent SIGTERM!
+ 9月 30 12:43:20 fukutech gunicorn[951982]: [2025-09-30 12:43:20 +0900] [951982] [ERROR] Exception in worker process
+ 9月 30 12:43:20 fukutech gunicorn[951982]: Traceback (most recent call last):
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     worker.init_process()
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     super().init_process()
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     self.load_wsgi()
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:20 fukutech gunicorn[951982]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     self.callable = self.load()
+ 9月 30 12:43:20 fukutech gunicorn[951982]:                     ^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     return self.load_wsgiapp()
+ 9月 30 12:43:20 fukutech gunicorn[951982]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:20 fukutech gunicorn[951982]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     mod = importlib.import_module(module)
+ 9月 30 12:43:20 fukutech gunicorn[951982]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:20 fukutech gunicorn[951982]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     db.init_app(flask_app)
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:20 fukutech gunicorn[951982]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     return _parse_url(name_or_url)
+ 9月 30 12:43:20 fukutech gunicorn[951982]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951982]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:20 fukutech gunicorn[951982]:     components["port"] = int(components["port"])
+ 9月 30 12:43:20 fukutech gunicorn[951982]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951982]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:20 fukutech gunicorn[951982]: [2025-09-30 12:43:20 +0900] [951982] [INFO] Worker exiting (pid: 951982)
+ 9月 30 12:43:20 fukutech gunicorn[951979]: [2025-09-30 12:43:20 +0900] [951979] [ERROR] Worker (pid:951982) exited with code 3
+ 9月 30 12:43:20 fukutech gunicorn[951979]: Traceback (most recent call last):
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 209, in run
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     self.sleep()
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 360, in sleep
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+ 9月 30 12:43:20 fukutech gunicorn[951979]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     self.reap_workers()
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 530, in reap_workers
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+ 9月 30 12:43:20 fukutech gunicorn[951979]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+ 9月 30 12:43:20 fukutech gunicorn[951979]: During handling of the above exception, another exception occurred:
+ 9月 30 12:43:20 fukutech gunicorn[951979]: Traceback (most recent call last):
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/bin/gunicorn", line 8, in <module>
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     sys.exit(run())
+ 9月 30 12:43:20 fukutech gunicorn[951979]:              ^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 236, in run
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     super().run()
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 72, in run
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     Arbiter(self).run()
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 229, in run
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 342, in halt
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     self.stop()
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 396, in stop
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     time.sleep(0.1)
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     self.reap_workers()
+ 9月 30 12:43:20 fukutech gunicorn[951979]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 530, in reap_workers
+ 9月 30 12:43:20 fukutech gunicorn[951979]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+ 9月 30 12:43:20 fukutech gunicorn[951979]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+ 9月 30 12:43:20 fukutech gunicorn[951987]: [2025-09-30 12:43:20 +0900] [951987] [ERROR] Exception in worker process
+ 9月 30 12:43:20 fukutech gunicorn[951987]: Traceback (most recent call last):
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     worker.init_process()
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     super().init_process()
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     self.load_wsgi()
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:20 fukutech gunicorn[951987]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     self.callable = self.load()
+ 9月 30 12:43:20 fukutech gunicorn[951987]:                     ^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     return self.load_wsgiapp()
+ 9月 30 12:43:20 fukutech gunicorn[951987]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:20 fukutech gunicorn[951987]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     mod = importlib.import_module(module)
+ 9月 30 12:43:20 fukutech gunicorn[951987]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:20 fukutech gunicorn[951987]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     db.init_app(flask_app)
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:20 fukutech gunicorn[951987]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     return _parse_url(name_or_url)
+ 9月 30 12:43:20 fukutech gunicorn[951987]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951987]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:20 fukutech gunicorn[951987]:     components["port"] = int(components["port"])
+ 9月 30 12:43:20 fukutech gunicorn[951987]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:20 fukutech gunicorn[951987]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:20 fukutech gunicorn[951987]: [2025-09-30 12:43:20 +0900] [951987] [INFO] Worker exiting (pid: 951987)
+ 9月 30 12:43:21 fukutech gunicorn[952000]: [2025-09-30 12:43:21 +0900] [952000] [INFO] Starting gunicorn 22.0.0
+ 9月 30 12:43:21 fukutech gunicorn[952000]: [2025-09-30 12:43:21 +0900] [952000] [INFO] Listening at: http://127.0.0.1:8000 (952000)
+ 9月 30 12:43:21 fukutech gunicorn[952000]: [2025-09-30 12:43:21 +0900] [952000] [INFO] Using worker: gthread
+ 9月 30 12:43:21 fukutech gunicorn[952002]: [2025-09-30 12:43:21 +0900] [952002] [INFO] Booting worker with pid: 952002
+ 9月 30 12:43:21 fukutech gunicorn[952003]: [2025-09-30 12:43:21 +0900] [952003] [INFO] Booting worker with pid: 952003
+ 9月 30 12:43:21 fukutech gunicorn[952004]: [2025-09-30 12:43:21 +0900] [952004] [INFO] Booting worker with pid: 952004
+ 9月 30 12:43:21 fukutech gunicorn[952005]: [2025-09-30 12:43:21 +0900] [952005] [INFO] Booting worker with pid: 952005
+ 9月 30 12:43:21 fukutech gunicorn[952002]: [2025-09-30 12:43:21 +0900] [952002] [ERROR] Exception in worker process
+ 9月 30 12:43:21 fukutech gunicorn[952002]: Traceback (most recent call last):
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     worker.init_process()
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     super().init_process()
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     self.load_wsgi()
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:21 fukutech gunicorn[952002]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     self.callable = self.load()
+ 9月 30 12:43:21 fukutech gunicorn[952002]:                     ^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     return self.load_wsgiapp()
+ 9月 30 12:43:21 fukutech gunicorn[952002]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:21 fukutech gunicorn[952002]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     mod = importlib.import_module(module)
+ 9月 30 12:43:21 fukutech gunicorn[952002]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:21 fukutech gunicorn[952002]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     db.init_app(flask_app)
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:21 fukutech gunicorn[952002]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     return _parse_url(name_or_url)
+ 9月 30 12:43:21 fukutech gunicorn[952002]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952002]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:21 fukutech gunicorn[952002]:     components["port"] = int(components["port"])
+ 9月 30 12:43:21 fukutech gunicorn[952002]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952002]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:21 fukutech gunicorn[952002]: [2025-09-30 12:43:21 +0900] [952002] [INFO] Worker exiting (pid: 952002)
+ 9月 30 12:43:21 fukutech gunicorn[952003]: [2025-09-30 12:43:21 +0900] [952003] [ERROR] Exception in worker process
+ 9月 30 12:43:21 fukutech gunicorn[952003]: Traceback (most recent call last):
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     worker.init_process()
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     super().init_process()
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     self.load_wsgi()
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:21 fukutech gunicorn[952003]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     self.callable = self.load()
+ 9月 30 12:43:21 fukutech gunicorn[952003]:                     ^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     return self.load_wsgiapp()
+ 9月 30 12:43:21 fukutech gunicorn[952003]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:21 fukutech gunicorn[952003]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     mod = importlib.import_module(module)
+ 9月 30 12:43:21 fukutech gunicorn[952003]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:21 fukutech gunicorn[952003]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     db.init_app(flask_app)
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:21 fukutech gunicorn[952003]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     return _parse_url(name_or_url)
+ 9月 30 12:43:21 fukutech gunicorn[952003]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952003]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:21 fukutech gunicorn[952003]:     components["port"] = int(components["port"])
+ 9月 30 12:43:21 fukutech gunicorn[952003]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:21 fukutech gunicorn[952003]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:21 fukutech gunicorn[952003]: [2025-09-30 12:43:21 +0900] [952003] [INFO] Worker exiting (pid: 952003)
+ 9月 30 12:43:21 fukutech gunicorn[952000]: [2025-09-30 12:43:21 +0900] [952000] [ERROR] Worker (pid:952003) exited with code 3
+ 9月 30 12:43:21 fukutech gunicorn[952000]: [2025-09-30 12:43:21 +0900] [952000] [ERROR] Worker (pid:952002) was sent SIGTERM!
+ 9月 30 12:43:22 fukutech gunicorn[952004]: [2025-09-30 12:43:22 +0900] [952004] [ERROR] Exception in worker process
+ 9月 30 12:43:22 fukutech gunicorn[952004]: Traceback (most recent call last):
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     worker.init_process()
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     super().init_process()
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     self.load_wsgi()
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:22 fukutech gunicorn[952004]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     self.callable = self.load()
+ 9月 30 12:43:22 fukutech gunicorn[952004]:                     ^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     return self.load_wsgiapp()
+ 9月 30 12:43:22 fukutech gunicorn[952004]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:22 fukutech gunicorn[952004]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     mod = importlib.import_module(module)
+ 9月 30 12:43:22 fukutech gunicorn[952004]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:22 fukutech gunicorn[952004]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     db.init_app(flask_app)
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:22 fukutech gunicorn[952004]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     return _parse_url(name_or_url)
+ 9月 30 12:43:22 fukutech gunicorn[952004]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952004]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:22 fukutech gunicorn[952004]:     components["port"] = int(components["port"])
+ 9月 30 12:43:22 fukutech gunicorn[952004]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952004]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:22 fukutech gunicorn[952004]: [2025-09-30 12:43:22 +0900] [952004] [INFO] Worker exiting (pid: 952004)
+ 9月 30 12:43:22 fukutech gunicorn[952005]: [2025-09-30 12:43:22 +0900] [952005] [ERROR] Exception in worker process
+ 9月 30 12:43:22 fukutech gunicorn[952005]: Traceback (most recent call last):
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     worker.init_process()
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     super().init_process()
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     self.load_wsgi()
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:22 fukutech gunicorn[952005]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     self.callable = self.load()
+ 9月 30 12:43:22 fukutech gunicorn[952005]:                     ^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     return self.load_wsgiapp()
+ 9月 30 12:43:22 fukutech gunicorn[952005]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:22 fukutech gunicorn[952005]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     mod = importlib.import_module(module)
+ 9月 30 12:43:22 fukutech gunicorn[952005]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:22 fukutech gunicorn[952005]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     db.init_app(flask_app)
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:22 fukutech gunicorn[952005]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     return _parse_url(name_or_url)
+ 9月 30 12:43:22 fukutech gunicorn[952005]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952005]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:22 fukutech gunicorn[952005]:     components["port"] = int(components["port"])
+ 9月 30 12:43:22 fukutech gunicorn[952005]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952005]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:22 fukutech gunicorn[952005]: [2025-09-30 12:43:22 +0900] [952005] [INFO] Worker exiting (pid: 952005)
+ 9月 30 12:43:22 fukutech gunicorn[952000]: [2025-09-30 12:43:22 +0900] [952000] [ERROR] Worker (pid:952004) exited with code 3
+ 9月 30 12:43:22 fukutech gunicorn[952000]: Traceback (most recent call last):
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 209, in run
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     self.sleep()
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 360, in sleep
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+ 9月 30 12:43:22 fukutech gunicorn[952000]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     self.reap_workers()
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 530, in reap_workers
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+ 9月 30 12:43:22 fukutech gunicorn[952000]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+ 9月 30 12:43:22 fukutech gunicorn[952000]: During handling of the above exception, another exception occurred:
+ 9月 30 12:43:22 fukutech gunicorn[952000]: Traceback (most recent call last):
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/bin/gunicorn", line 8, in <module>
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     sys.exit(run())
+ 9月 30 12:43:22 fukutech gunicorn[952000]:              ^^^^^
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 236, in run
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     super().run()
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 72, in run
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     Arbiter(self).run()
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 229, in run
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 342, in halt
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     self.stop()
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 396, in stop
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     time.sleep(0.1)
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     self.reap_workers()
+ 9月 30 12:43:22 fukutech gunicorn[952000]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 530, in reap_workers
+ 9月 30 12:43:22 fukutech gunicorn[952000]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+ 9月 30 12:43:22 fukutech gunicorn[952000]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+ 9月 30 12:43:22 fukutech gunicorn[952015]: [2025-09-30 12:43:22 +0900] [952015] [INFO] Starting gunicorn 22.0.0
+ 9月 30 12:43:22 fukutech gunicorn[952015]: [2025-09-30 12:43:22 +0900] [952015] [INFO] Listening at: http://127.0.0.1:8000 (952015)
+ 9月 30 12:43:22 fukutech gunicorn[952015]: [2025-09-30 12:43:22 +0900] [952015] [INFO] Using worker: gthread
+ 9月 30 12:43:22 fukutech gunicorn[952016]: [2025-09-30 12:43:22 +0900] [952016] [INFO] Booting worker with pid: 952016
+ 9月 30 12:43:22 fukutech gunicorn[952017]: [2025-09-30 12:43:22 +0900] [952017] [INFO] Booting worker with pid: 952017
+ 9月 30 12:43:22 fukutech gunicorn[952018]: [2025-09-30 12:43:22 +0900] [952018] [INFO] Booting worker with pid: 952018
+ 9月 30 12:43:22 fukutech gunicorn[952021]: [2025-09-30 12:43:22 +0900] [952021] [INFO] Booting worker with pid: 952021
+ 9月 30 12:43:23 fukutech gunicorn[952016]: [2025-09-30 12:43:23 +0900] [952016] [ERROR] Exception in worker process
+ 9月 30 12:43:23 fukutech gunicorn[952016]: Traceback (most recent call last):
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     worker.init_process()
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     super().init_process()
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     self.load_wsgi()
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:23 fukutech gunicorn[952016]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     self.callable = self.load()
+ 9月 30 12:43:23 fukutech gunicorn[952016]:                     ^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     return self.load_wsgiapp()
+ 9月 30 12:43:23 fukutech gunicorn[952016]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:23 fukutech gunicorn[952016]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     mod = importlib.import_module(module)
+ 9月 30 12:43:23 fukutech gunicorn[952016]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:23 fukutech gunicorn[952016]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     db.init_app(flask_app)
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:23 fukutech gunicorn[952016]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     return _parse_url(name_or_url)
+ 9月 30 12:43:23 fukutech gunicorn[952016]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952016]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:23 fukutech gunicorn[952016]:     components["port"] = int(components["port"])
+ 9月 30 12:43:23 fukutech gunicorn[952016]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952016]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:23 fukutech gunicorn[952016]: [2025-09-30 12:43:23 +0900] [952016] [INFO] Worker exiting (pid: 952016)
+ 9月 30 12:43:23 fukutech gunicorn[952018]: [2025-09-30 12:43:23 +0900] [952018] [ERROR] Exception in worker process
+ 9月 30 12:43:23 fukutech gunicorn[952018]: Traceback (most recent call last):
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     worker.init_process()
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     super().init_process()
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     self.load_wsgi()
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:23 fukutech gunicorn[952018]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     self.callable = self.load()
+ 9月 30 12:43:23 fukutech gunicorn[952018]:                     ^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     return self.load_wsgiapp()
+ 9月 30 12:43:23 fukutech gunicorn[952018]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:23 fukutech gunicorn[952018]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     mod = importlib.import_module(module)
+ 9月 30 12:43:23 fukutech gunicorn[952018]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:23 fukutech gunicorn[952018]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     db.init_app(flask_app)
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:23 fukutech gunicorn[952018]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     return _parse_url(name_or_url)
+ 9月 30 12:43:23 fukutech gunicorn[952018]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952018]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:23 fukutech gunicorn[952018]:     components["port"] = int(components["port"])
+ 9月 30 12:43:23 fukutech gunicorn[952018]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952018]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:23 fukutech gunicorn[952018]: [2025-09-30 12:43:23 +0900] [952018] [INFO] Worker exiting (pid: 952018)
+ 9月 30 12:43:23 fukutech gunicorn[952017]: [2025-09-30 12:43:23 +0900] [952017] [ERROR] Exception in worker process
+ 9月 30 12:43:23 fukutech gunicorn[952017]: Traceback (most recent call last):
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     worker.init_process()
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     super().init_process()
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     self.load_wsgi()
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:23 fukutech gunicorn[952017]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     self.callable = self.load()
+ 9月 30 12:43:23 fukutech gunicorn[952017]:                     ^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     return self.load_wsgiapp()
+ 9月 30 12:43:23 fukutech gunicorn[952017]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:23 fukutech gunicorn[952017]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     mod = importlib.import_module(module)
+ 9月 30 12:43:23 fukutech gunicorn[952017]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:23 fukutech gunicorn[952017]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     db.init_app(flask_app)
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:23 fukutech gunicorn[952017]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     return _parse_url(name_or_url)
+ 9月 30 12:43:23 fukutech gunicorn[952017]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952017]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:23 fukutech gunicorn[952017]:     components["port"] = int(components["port"])
+ 9月 30 12:43:23 fukutech gunicorn[952017]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952017]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:23 fukutech gunicorn[952017]: [2025-09-30 12:43:23 +0900] [952017] [INFO] Worker exiting (pid: 952017)
+ 9月 30 12:43:23 fukutech gunicorn[952015]: [2025-09-30 12:43:23 +0900] [952015] [ERROR] Worker (pid:952018) exited with code 3
+ 9月 30 12:43:23 fukutech gunicorn[952021]: [2025-09-30 12:43:23 +0900] [952021] [ERROR] Exception in worker process
+ 9月 30 12:43:23 fukutech gunicorn[952021]: Traceback (most recent call last):
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     worker.init_process()
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     super().init_process()
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     self.load_wsgi()
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     self.wsgi = self.app.wsgi()
+ 9月 30 12:43:23 fukutech gunicorn[952021]:                 ^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     self.callable = self.load()
+ 9月 30 12:43:23 fukutech gunicorn[952021]:                     ^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     return self.load_wsgiapp()
+ 9月 30 12:43:23 fukutech gunicorn[952021]:            ^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     return util.import_app(self.app_uri)
+ 9月 30 12:43:23 fukutech gunicorn[952021]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     mod = importlib.import_module(module)
+ 9月 30 12:43:23 fukutech gunicorn[952021]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     return _bootstrap._gcd_import(name[level:], package, level)
+ 9月 30 12:43:23 fukutech gunicorn[952021]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/digital-signage-be/app.py", line 32, in <module>
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     db.init_app(flask_app)
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 373, in init_app
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     self._apply_driver_defaults(options, app)
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/flask_sqlalchemy/extension.py", line 607, in _apply_driver_defaults
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     url = sa.engine.make_url(options["url"])
+ 9月 30 12:43:23 fukutech gunicorn[952021]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 842, in make_url
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     return _parse_url(name_or_url)
+ 9月 30 12:43:23 fukutech gunicorn[952021]:            ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952021]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/sqlalchemy/engine/url.py", line 903, in _parse_url
+ 9月 30 12:43:23 fukutech gunicorn[952021]:     components["port"] = int(components["port"])
+ 9月 30 12:43:23 fukutech gunicorn[952021]:                          ^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952021]: ValueError: invalid literal for int() with base 10: 'None'
+ 9月 30 12:43:23 fukutech gunicorn[952021]: [2025-09-30 12:43:23 +0900] [952021] [INFO] Worker exiting (pid: 952021)
+ 9月 30 12:43:23 fukutech gunicorn[952015]: [2025-09-30 12:43:23 +0900] [952015] [ERROR] Worker (pid:952016) was sent SIGTERM!
+ 9月 30 12:43:23 fukutech gunicorn[952015]: [2025-09-30 12:43:23 +0900] [952015] [ERROR] Worker (pid:952017) was sent SIGTERM!
+ 9月 30 12:43:23 fukutech gunicorn[952015]: [2025-09-30 12:43:23 +0900] [952015] [ERROR] Worker (pid:952021) exited with code 3
+ 9月 30 12:43:23 fukutech gunicorn[952015]: Traceback (most recent call last):
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 209, in run
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     self.sleep()
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 360, in sleep
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+ 9月 30 12:43:23 fukutech gunicorn[952015]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     self.reap_workers()
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 530, in reap_workers
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+ 9月 30 12:43:23 fukutech gunicorn[952015]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+ 9月 30 12:43:23 fukutech gunicorn[952015]: During handling of the above exception, another exception occurred:
+ 9月 30 12:43:23 fukutech gunicorn[952015]: Traceback (most recent call last):
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/bin/gunicorn", line 8, in <module>
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     sys.exit(run())
+ 9月 30 12:43:23 fukutech gunicorn[952015]:              ^^^^^
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 236, in run
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     super().run()
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 72, in run
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     Arbiter(self).run()
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 229, in run
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 342, in halt
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     self.stop()
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 396, in stop
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     time.sleep(0.1)
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     self.reap_workers()
+ 9月 30 12:43:23 fukutech gunicorn[952015]:   File "/home/fukutech/services/digital-signage-be/venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 530, in reap_workers
+ 9月 30 12:43:23 fukutech gunicorn[952015]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+ 9月 30 12:43:23 fukutech gunicorn[952015]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+ 9月 30 12:45:54 fukutech gunicorn[952181]: [2025-09-30 12:45:54 +0900] [952181] [INFO] Starting gunicorn 22.0.0
+ 9月 30 12:45:54 fukutech gunicorn[952181]: [2025-09-30 12:45:54 +0900] [952181] [INFO] Listening at: http://127.0.0.1:8000 (952181)
+ 9月 30 12:45:54 fukutech gunicorn[952181]: [2025-09-30 12:45:54 +0900] [952181] [INFO] Using worker: gthread
+ 9月 30 12:45:54 fukutech gunicorn[952186]: [2025-09-30 12:45:54 +0900] [952186] [INFO] Booting worker with pid: 952186
+ 9月 30 12:45:54 fukutech gunicorn[952187]: [2025-09-30 12:45:54 +0900] [952187] [INFO] Booting worker with pid: 952187
+ 9月 30 12:45:54 fukutech gunicorn[952188]: [2025-09-30 12:45:54 +0900] [952188] [INFO] Booting worker with pid: 952188
+ 9月 30 12:45:54 fukutech gunicorn[952189]: [2025-09-30 12:45:54 +0900] [952189] [INFO] Booting worker with pid: 952189
+ 9月 30 12:54:35 fukutech gunicorn[952181]: [2025-09-30 12:54:35 +0900] [952181] [INFO] Handling signal: term
+ 9月 30 12:54:35 fukutech gunicorn[952187]: [2025-09-30 12:54:35 +0900] [952187] [INFO] Worker exiting (pid: 952187)
+ 9月 30 12:54:35 fukutech gunicorn[952188]: [2025-09-30 12:54:35 +0900] [952188] [INFO] Worker exiting (pid: 952188)
+ 9月 30 12:54:35 fukutech gunicorn[952186]: [2025-09-30 12:54:35 +0900] [952186] [INFO] Worker exiting (pid: 952186)
+ 9月 30 12:54:35 fukutech gunicorn[952189]: [2025-09-30 12:54:35 +0900] [952189] [INFO] Worker exiting (pid: 952189)
+ 9月 30 12:54:36 fukutech gunicorn[952181]: [2025-09-30 12:54:36 +0900] [952181] [INFO] Shutting down: Master
+ 9月 30 12:54:36 fukutech gunicorn[953786]: [2025-09-30 12:54:36 +0900] [953786] [INFO] Starting gunicorn 22.0.0
+ 9月 30 12:54:36 fukutech gunicorn[953786]: [2025-09-30 12:54:36 +0900] [953786] [INFO] Listening at: http://127.0.0.1:8000 (953786)
+ 9月 30 12:54:36 fukutech gunicorn[953786]: [2025-09-30 12:54:36 +0900] [953786] [INFO] Using worker: gthread
+ 9月 30 12:54:36 fukutech gunicorn[953788]: [2025-09-30 12:54:36 +0900] [953788] [INFO] Booting worker with pid: 953788
+ 9月 30 12:54:36 fukutech gunicorn[953789]: [2025-09-30 12:54:36 +0900] [953789] [INFO] Booting worker with pid: 953789
+ 9月 30 12:54:36 fukutech gunicorn[953790]: [2025-09-30 12:54:36 +0900] [953790] [INFO] Booting worker with pid: 953790
+ 9月 30 12:54:36 fukutech gunicorn[953793]: [2025-09-30 12:54:36 +0900] [953793] [INFO] Booting worker with pid: 953793
+ 9月 30 13:02:30 fukutech gunicorn[953786]: [2025-09-30 13:02:30 +0900] [953786] [INFO] Handling signal: term
+ 9月 30 13:02:30 fukutech gunicorn[953788]: [2025-09-30 13:02:30 +0900] [953788] [INFO] Worker exiting (pid: 953788)
+ 9月 30 13:02:30 fukutech gunicorn[953790]: [2025-09-30 13:02:30 +0900] [953790] [INFO] Worker exiting (pid: 953790)
+ 9月 30 13:02:30 fukutech gunicorn[953789]: [2025-09-30 13:02:30 +0900] [953789] [INFO] Worker exiting (pid: 953789)
+ 9月 30 13:02:30 fukutech gunicorn[953793]: [2025-09-30 13:02:30 +0900] [953793] [INFO] Worker exiting (pid: 953793)
+ 9月 30 13:02:30 fukutech gunicorn[953786]: [2025-09-30 13:02:30 +0900] [953786] [INFO] Shutting down: Master
+ 9月 30 17:17:09 fukutech gunicorn[971220]: 2025-09-30 18:15:26.657389+09:00
+ 9月 30 17:17:09 fukutech gunicorn[971220]: Asia/Tokyo
+ 9月 30 17:45:05 fukutech gunicorn[981359]: 2025-09-30 18:41:00.769756+09:00
+ 9月 30 17:45:05 fukutech gunicorn[981359]: Asia/Tokyo
+10月 01 15:25:55 fukutech gunicorn[985231]: 2025-10-01 12:48:27.455919+09:00
+10月 01 15:25:55 fukutech gunicorn[985231]: Asia/Tokyo
+10月 01 15:25:55 fukutech gunicorn[985230]: 2025-10-01 12:49:18.418332+09:00
+10月 01 15:25:55 fukutech gunicorn[985230]: Asia/Tokyo
+10月 01 15:57:43 fukutech gunicorn[1043281]: 2025-10-01 16:26:27.640621+09:00
+10月 01 15:57:43 fukutech gunicorn[1043281]: Asia/Tokyo
+10月 01 16:37:45 fukutech gunicorn[1046814]: 2025-10-01 16:26:27.640621+09:00 2025-10-01 07:31:10.338890+00:00
+10月 01 16:37:45 fukutech gunicorn[1046816]: 2025-10-01 17:31:40.210482+09:00
+10月 01 16:37:45 fukutech gunicorn[1046816]: Asia/Tokyo
+10月 01 18:27:27 fukutech gunicorn[1051254]: 2025-10-01 19:16:25.251983+09:00
+10月 01 18:27:27 fukutech gunicorn[1051254]: Asia/Tokyo
+10月 01 18:27:27 fukutech gunicorn[1051251]: /home/fukutech/services/digital-signage-be/datas/contents/fukutech_admin-d3a7d477-8644-46bc-9c8b-d47c4e42d918.png
+10月 01 18:27:27 fukutech gunicorn[1051251]: /home/fukutech/services/digital-signage-be/datas/thumbnails/fukutech_admin-d3a7d477-8644-46bc-9c8b-d47c4e42d918.png
+10月 01 18:27:27 fukutech gunicorn[1051251]: /home/fukutech/services/digital-signage-be/datas/contents/fukutech_admin-44652f68-8068-490a-b659-79f972a6d978.png
+10月 01 18:27:27 fukutech gunicorn[1051251]: /home/fukutech/services/digital-signage-be/datas/thumbnails/fukutech_admin-44652f68-8068-490a-b659-79f972a6d978.png
+10月 01 18:27:27 fukutech gunicorn[1051252]: /home/fukutech/services/digital-signage-be/datas/contents/test_user_00-0177d054-e80e-4572-9749-a9bf30a62c6f.jpg
+10月 01 18:27:27 fukutech gunicorn[1051252]: /home/fukutech/services/digital-signage-be/datas/thumbnails/test_user_00-0177d054-e80e-4572-9749-a9bf30a62c6f.png
+10月 01 18:27:27 fukutech gunicorn[1051252]: /home/fukutech/services/digital-signage-be/datas/contents/fukutech_admin-d4c4d521-43b3-468d-a381-5ad4ad16f6b4.png
+10月 01 18:27:27 fukutech gunicorn[1051252]: /home/fukutech/services/digital-signage-be/datas/thumbnails/fukutech_admin-d4c4d521-43b3-468d-a381-5ad4ad16f6b4.png
+10月 01 18:27:27 fukutech gunicorn[1051252]: /home/fukutech/services/digital-signage-be/datas/contents/fukutech_admin-f72f5c68-c1e5-43ea-808c-5acd24ca7375.png
+10月 01 18:27:27 fukutech gunicorn[1051252]: /home/fukutech/services/digital-signage-be/datas/thumbnails/fukutech_admin-f72f5c68-c1e5-43ea-808c-5acd24ca7375.png
+10月 01 18:27:27 fukutech gunicorn[1051252]: /home/fukutech/services/digital-signage-be/datas/contents/fukutech_admin-202d016d-ecb1-403c-a129-30806fdcf63b.png
+10月 01 18:27:27 fukutech gunicorn[1051252]: /home/fukutech/services/digital-signage-be/datas/thumbnails/fukutech_admin-202d016d-ecb1-403c-a129-30806fdcf63b.png
+10月 01 19:10:21 fukutech gunicorn[1059271]: ELSE
+10月 01 19:22:23 fukutech gunicorn[1060010]: ELSE
+10月 01 19:22:23 fukutech gunicorn[1060006]: ELSE
+10月 05 20:05:48 fukutech gunicorn[1082969]: 2025-10-05 18:55:26.804166+09:00
+10月 05 20:05:48 fukutech gunicorn[1082969]: Asia/Tokyo
+10月 05 20:05:48 fukutech gunicorn[1082969]: 2025-10-05 19:30:25.933992+09:00
+10月 05 20:05:48 fukutech gunicorn[1082969]: Asia/Tokyo
+10月 05 20:05:48 fukutech gunicorn[1082969]: ELSE
+10月 05 20:05:48 fukutech gunicorn[1082969]: ELSE
+10月 05 20:05:48 fukutech gunicorn[1082972]: 2025-10-02 11:41:09.121616+09:00
+10月 05 20:05:48 fukutech gunicorn[1082972]: Asia/Tokyo
+10月 05 20:05:48 fukutech gunicorn[1082972]: 2025-10-02 11:54:14.264008+09:00
+10月 05 20:05:48 fukutech gunicorn[1082972]: Asia/Tokyo
+10月 05 20:05:48 fukutech gunicorn[1082972]: /home/fukutech/services/digital-signage-be/datas/contents/fukutech_admin-e9ab86ae-4d30-4c36-bca9-e1687eb3adf6.jpg
+10月 05 20:05:48 fukutech gunicorn[1082972]: /home/fukutech/services/digital-signage-be/datas/thumbnails/fukutech_admin-e9ab86ae-4d30-4c36-bca9-e1687eb3adf6.png
+10月 05 20:05:48 fukutech gunicorn[1082972]: ELSE
+10月 05 20:05:48 fukutech gunicorn[1082972]: ELSE
+10月 05 20:05:49 fukutech gunicorn[1082966]: ELSE
+10月 05 20:05:49 fukutech gunicorn[1082966]: 2025-10-05 17:53:06.948226+09:00
+10月 05 20:05:49 fukutech gunicorn[1082966]: Asia/Tokyo
+10月 05 20:05:49 fukutech gunicorn[1082966]: 2025-10-05 20:05:55.307409+09:00
+10月 05 20:05:49 fukutech gunicorn[1082966]: Asia/Tokyo
+10月 05 20:05:49 fukutech gunicorn[1082967]: 2025-10-02 13:42:12.466674+09:00
+10月 05 20:05:49 fukutech gunicorn[1082967]: Asia/Tokyo
+10月 05 20:05:49 fukutech gunicorn[1082967]: 2025-10-03 17:56:56.491708+09:00
+10月 05 20:05:49 fukutech gunicorn[1082967]: Asia/Tokyo
+10月 05 20:05:49 fukutech gunicorn[1082967]: 2025-10-05 00:11:56.197098+09:00
+10月 05 20:05:49 fukutech gunicorn[1082967]: Asia/Tokyo
+10月 05 20:05:49 fukutech gunicorn[1082967]: 2025-10-05 18:54:54.469436+09:00
+10月 05 20:05:49 fukutech gunicorn[1082967]: Asia/Tokyo
+10月 05 20:05:49 fukutech gunicorn[1082967]: ELSE
+10月 05 20:05:49 fukutech gunicorn[1082967]: ELSE
+10月 05 20:24:17 fukutech gunicorn[1234395]: 2025-10-05 20:05:55.307409+09:00 2025-10-05 11:06:29.309645+00:00
+10月 05 20:24:17 fukutech gunicorn[1234395]: 2025-10-05 21:21:25.179336+09:00
+10月 05 20:24:17 fukutech gunicorn[1234395]: Asia/Tokyo
+10月 05 20:24:18 fukutech gunicorn[1234394]: 2025-10-05 21:06:41.878946+09:00
+10月 05 20:24:18 fukutech gunicorn[1234394]: Asia/Tokyo
+10月 06 11:41:19 fukutech gunicorn[1240384]: /home/fukutech/services/digital-signage-be/datas/contents/fukutech_admin-a2214646-f386-429c-a021-052da0d6765c.jpg
+10月 06 11:41:19 fukutech gunicorn[1240384]: /home/fukutech/services/digital-signage-be/datas/thumbnails/fukutech_admin-a2214646-f386-429c-a021-052da0d6765c.png
+10月 06 11:41:19 fukutech gunicorn[1240382]: 2025-10-06 09:20:39.040400+09:00
+10月 06 11:41:19 fukutech gunicorn[1240382]: Asia/Tokyo

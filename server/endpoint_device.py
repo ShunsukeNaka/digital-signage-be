@@ -728,6 +728,8 @@ def device_group_set():
             user_id = token.user_id
             group_id = data["group_id"]
             id_array = data["device"]
+            print(id_array)
+            print(group_id)
 
             # ユーザー確認
             user = User.query.filter_by(id=user_id).first()
