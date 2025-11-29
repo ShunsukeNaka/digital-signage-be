@@ -74,6 +74,7 @@ def login():
                 }
             }), 200
     except Exception as e:
+        print(e)
         return jsonify({
             "status": "error", "responded_at": get_now_str(),
             "message": f'message: {e}'

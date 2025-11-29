@@ -102,13 +102,17 @@ def rotate():
         if request.method == 'POST':
             if 'file' not in request.files:
                 return jsonify({"status": "error", "message": "ファイルがありません"}), 400
-            
+            direction = request.form.get("direction")
+            if not direction:
+              return jsonify({"status": "error", "message": "directionがありません"}), 400
+
             file = request.files['file']
+           
 
             # filename = os.path.basename(image_path)
             filename = file.filename
             print(filename)
-            direction = filename.split("-")[-1].split(".")[0]
+            # direction = filename.split("-")[-1].split(".")[0]
             print(direction)
             name, ext = os.path.splitext(filename)
             print(name)
@@ -140,6 +144,7 @@ def rotate():
                 "message": 'message: This is Error.'
             }), 500
     except Exception as e:
+        print(e)
         return jsonify({
                 "status": "error", "responded_at": get_now_str(),
                 "message": f'message: {e}'

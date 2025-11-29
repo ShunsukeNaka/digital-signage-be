@@ -69,16 +69,31 @@ def check_token(token, token_type):
 def generate_onetime_token_id():
     return uuid.uuid4()
 
-def cleanup_expired_login_tokens():
-    # login トークンで期限切れのものを取得
-    expired_tokens = Token.query.filter(
-        Token.token_type == "login",
-        Token.expires_at < get_now_str()
-    ).all()
+#def cleanup_expired_login_tokens():
+#    # login トークンで期限切れのものを取得
+#    expired_tokens = Token.query.filter(
+#        Token.token_type == "login",
+#        Token.expires_at < get_now_str()
+#    ).all()
 
     # 削除
+#    for token in expired_tokens:
+#        db.session.delete(token)
+
+#    db.session.commit()
+#    return len(expired_tokens)  
+
+def cleanup_expired_login_tokens():
+    now = datetime.now(timezone.utc)
+
+    expired_tokens = Token.query.filter(
+        Token.token_type == "login",
+        Token.expires_at < now
+    ).all()
+
     for token in expired_tokens:
         db.session.delete(token)
 
     db.session.commit()
-    return len(expired_tokens)  
+    return len(expired_tokens)
+
