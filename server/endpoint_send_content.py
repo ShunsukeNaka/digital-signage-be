@@ -32,7 +32,11 @@ def send_content():
             if not used_token:
                 return jsonify({"status": "error", "message": "無効なトークンです"}), 401
 
+
+
             file_path = get_content_path(content_id)
+            print("content_id: ", content_id)
+            print("filename: ", filename)
             mimetype, _ = mimetypes.guess_type(file_path)
             
             

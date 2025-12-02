@@ -53,7 +53,7 @@ def get_contents():
             contents_list = [
             {
                 "id": c.id,
-                "thumbnail_url": f"http://fukutech.kinulab.org/dsbe/send_thumbnail?id={c.id}",
+                "thumbnail_url": f"https://be.fukunage.fukunova.jp/send_thumbnail?id={c.id}",
                 "name": c.name,
                 "explanation": c.explanation,
                 "created_at": c.created_at
