@@ -128,7 +128,7 @@ def content():
                     "name": content_name,
                     "explanation": content_explanation,
                     "type": content_type,
-                    "url": f"http://fukutech.kinulab.org/dsbe/send_content?id={content_id}"
+                    "url": f"https://be.fukunage.fukunova.jp/send_content?id={content_id}"
                 }
             }), 200
 
@@ -249,7 +249,7 @@ def get_content():
                 "content": {
                     "id": content_id,
                     "type": check_content_type_forPath(file_path),
-                    "url": f"http://fukutech.kinulab.org/dsbe/send_content?id={content_id}",
+                    "url": f"https://be.fukunage.fukunova.jp/send_content?id={content_id}",
                     "token": token
                 }
             })
@@ -322,7 +322,7 @@ def get_content_device():
                 "content": {
                     "id": content_id,
                     "type": check_content_type_forPath(file_path),
-                    "url": f"http://fukutech.kinulab.org/dsbe/send_content/device?id={content_id}",
+                    "url": f"https://be.fukunage.fukunova.jp/send_content/device?id={content_id}",
                     "token": token
                 }
             })

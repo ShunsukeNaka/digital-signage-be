@@ -34,11 +34,11 @@ def device():
             # DataBaseからデータを取得して照合
             user = User.query.filter_by(id=user_id).first()
             if user is None:
-                return jsonify({"status": "error", "responded_at": get_now_str(), "message": "ユーザーが存在しません"}), 404
+                return jsonify({"status": "error", "responded_at": get_now_str(), "message": "ユーザーが存在しません"}), 405
 
             product = Product.query.filter_by(id=product_id).first()
             if product is None:
-                return jsonify({"status": "error", "responded_at": get_now_str(), "message": "製品が存在しません"}), 404
+                return jsonify({"status": "error", "responded_at": get_now_str(), "message": "製品が存在しません"}), 405
             
             # DataBaseからDeviceのデータを取得して照合
             add_device = Device.query.filter_by(id=device_id).first()

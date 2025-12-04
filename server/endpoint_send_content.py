@@ -78,7 +78,7 @@ def send_content_device():
             now = get_jst_time()
             now_utc = datetime.now(pytz.utc)
             used_token = OneTimeToken.query.filter(
-                OneTimeToken.id==token,
+                OneTimeToken.id==cast(token, UUID),
                 OneTimeToken.user_id==user_id,
                 OneTimeToken.expires_at >= datetime.now(pytz.timezone("Asia/Tokyo"))
             ).first()
@@ -89,12 +89,17 @@ def send_content_device():
             file_path = get_content_path(content_id)
             mimetype, _ = mimetypes.guess_type(file_path)
             
-            
-            db.session.delete(used_token)
+            #used_token.id = str(used_token.id)            
+            #db.session.delete(used_token)
+            db.session.execute(
+                text("DELETE FROM onetimetokens WHERE id = CAST(:id AS UUID)"),
+                {"id": used_token.id}
+            )
             db.session.commit()
             
             return send_file(file_path, mimetype=mimetype)
         except Exception as e:
+            print(e)
             return jsonify({
                 "status": "error", "responded_at": get_now_str(),
                 "message": f'message: {e}'
