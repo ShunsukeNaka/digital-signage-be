@@ -22,7 +22,7 @@ opencv-python==4.12.0.88
 packaging==25.0
 pdf2image==1.17.0
 pillow==11.3.0
-psycopg2-binary==2.9.9
+psycopg2-binary[binary]
 python-dotenv==1.0.1
 pytz==2025.2
 referencing==0.36.2

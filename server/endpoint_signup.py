@@ -52,26 +52,26 @@ def signup():
 
             hashed_password = generate_password_hash(created_password, method="pbkdf2:sha256", salt_length=16)
 
-            with bp.app_context():
-                existing_user = User.query.filter_by(email=created_email).first()
-                if existing_user:
-                    return jsonify({
-                        "status": "error",
-                        "message": "このメールアドレスは既に使われています。",
-                        "responded_at": get_now_str()
-                    }), 409
-                existing_user = User.query.filter_by(id=created_id).first()
-                if existing_user:
-                    return jsonify({
-                        "status": "error",
-                        "message": "このユーザーIDは既に使われています。",
-                        "responded_at": get_now_str()
-                    }), 409
-                
-                user = User(id=created_id, name=created_name, password=hashed_password, email=created_email, logined_at=created_at, created_at=created_at)
 
-                db.session.add(user)
-                db.session.commit()
+            existing_user = User.query.filter_by(email=created_email).first()
+            if existing_user:
+                return jsonify({
+                    "status": "error",
+                    "message": "このメールアドレスは既に使われています。",
+                    "responded_at": get_now_str()
+                }), 409
+            existing_user = User.query.filter_by(id=created_id).first()
+            if existing_user:
+                return jsonify({
+                    "status": "error",
+                    "message": "このユーザーIDは既に使われています。",
+                    "responded_at": get_now_str()
+                }), 409
+                
+            user = User(id=created_id, name=created_name, password=hashed_password, email=created_email, logined_at=created_at, created_at=created_at)
+
+            db.session.add(user)
+            db.session.commit()
 
             return jsonify({
                 "status": "success",
